@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso RocktSeat JavaScript</title>
+    </head>
+    <body>
+        <script>
+        // Exercício 1    
+        var endereco = {
+            rua: "Rua dos pinheiros",
+            numero: 1293,
+            bairro: "Centro",
+            cidade: "São Paulo",
+            uf: "SP"
+        };
+
+        console.log('O usuário mora em ',endereco.cidade,' / ',endereco.uf, ', no bairro ',endereco.bairro,', na rua "',endereco.rua,'" com o nº ',endereco.numero);
+
+        //Exercício 2
+        function pares(x, y){
+            for (i = x; i <= y; i++) {
+                if (i%2 == 0){
+                    console.log(i);
+
+                    i+=1;
+                }else{
+                    i+=1;
+                    console.log(i);
+                    i+=1;
+                }
+            }
+        }
+        pares (31,327);
+
+        //Exercício 3
+        function temHabilidade(skills){
+            var check = "";
+            for (i=0;i<=(skills.length-1);i++){
+                if(skills[i]=="Javascript"){
+                    check = "ok";
+                    console.log('true');
+                }
+            }
+            if (check == ""){
+                console.log('false');
+            }
+        }
+        var skills = ["Javascript", "ReactJS", "React Native"]
+        temHabilidade(skills); //true ou false
+
+        var teste = (skills[0] == "Javascript");
+        console.log(skills.length);
+        console.log(teste);
+
+        </script>
+    </body>
+</html>

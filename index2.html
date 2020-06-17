@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso RocktSeat JavaScript</title>
+    </head>
+    <body>
+        <div id="app"> 
+            <button onclick="mostraAlerta()">Me pressione</button>
+        </div>
+        <br>
+        <div id="app"> 
+            <button onmouseover="mostraAlerta1()">Me pressione</button>
+        </div>
+        <br>
+        <div id="app"> 
+            <input onkeypress="mostraAlerta2()" />
+        </div>
+        <script>
+            function mostraAlerta(){
+                alert('Botão foi clicado');
+            }
+            function mostraAlerta1(){
+                alert('Botão quase foi clicado');
+            }
+            function mostraAlerta2(){
+                alert('Tecla foi utilizada!');
+            }
+        </script>
+    </body>
+</html>

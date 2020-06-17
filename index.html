@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso RocktSeat JavaScript</title>
+    </head>
+    <body>
+        <script>
+            console.log("Hello World"); //exibição de informação no console
+
+            var nome ="Diego"; //variável string
+            var idade = 23; //variável inteiro
+            var peso = 80.5; //variável float
+            var humano = false; //variável bolean
+            
+            var alunos = ['Diego', 'Gabriel', 'Lucas']; //vetores 
+
+            var aluno = {
+                nome: "João",
+                idade: 33,
+                peso: 70.3,
+                humano: true
+            }; //objetos
+
+            console.log(alunos[2]); //exibição de informação no console
+            console.log(aluno.nome); //exibição de informação no console
+            
+            //Operações matemáticas
+            //+ = soma
+            //- = subtração
+            //* = multiplicação
+            /// = divisão
+            //% = mod
+
+            var x=10, y=5;
+            x*=y;
+            console.log(x,y);
+            var resultado = x + y;
+            console.log(resultado);
+
+            //Funções
+            function soma(numero1, numero2){
+                var resultado = numero1 + numero2;
+                return resultado;
+            }
+            var resultado = soma(1, 2);
+            console.log(resultado);
+
+            //Condicionais
+
+            //Trabalhando com IF
+            function retornaSexo(sexo){
+                //M, F
+                //Masculino, Feminino
+
+                if(sexo === 'M'){
+                    return 'Masculino';
+                } else if(sexo === 'F'){
+                    return 'feminino';
+                } else {
+                    return 'Outro';
+                }//== verifica se o valor é igual. === verifica se o valor e o tipo são iguais
+            }
+            var resultado = retornaSexo('TESTE');
+            console.log(resultado);
+
+
+            //Trabalhando com switch
+            function retornaSexo1 (sexo){
+                switch (sexo){
+                    case 'M':
+                        return 'Masculino';
+                    case 'F':
+                        return 'Feminino';
+                    default:
+                        return'Outro';
+                }
+            }
+            var resultado = retornaSexo1('F');
+            console.log(resultado);
+
+            //Operadores Lógicos
+            //AND (&&), OR (||), NOT (!= / !==)
+
+            var sexo = 'M', idade = 23;
+
+            if (sexo==='M'&& idade >= 18){
+                console.log('OK');
+            }
+
+            if (sexo==='F' || sexo==='M'){
+                console.log('OK2');
+            }
+
+            if (sexo != 'F'){
+                console.log('OK3');
+            }
+
+            var masculino = sexo === 'F';
+            console.log(masculino);
+
+            //Condição Ternária
+            // Quando há duas verificações dentro do IF
+
+            var sexo = 'M';
+
+            if (sexo==='M'){
+                console.log('Masculino');
+            } else{
+                console.log('Feminino');
+            }
+
+            var retorno = (sexo==='M')?'Masculino':'Feminino';
+            console.log(retorno);
+
+            //Estrutura de Repetição
+            //FOR, WHILE
+
+            for(var i = 0; i <=100; i++){
+                console.log(i);
+            }
+
+            var j=0;
+            while(j<=100){
+                console.log(j);
+                j++;
+            }
+
+            //Intervalos e Timeout
+            //Função que executa várias vezes dentro de um intervalo
+
+            function exibeAlgo(){
+                console.log('Hello World');
+            }
+
+            function exibeAlgo2(){
+                console.log('Hello World2');
+            }
+            
+            setInterval(exibeAlgo, 1000);
+
+            setTimeout(exibeAlgo2, 5000);
+
+        </script>
+    </body>
+</html>
