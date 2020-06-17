@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso RocktSeat JavaScript</title>
+    </head>
+    <body>
+        <!--Exercício 1 / 2-->
+        <div class="div1">
+            <button class="btn">Clique</button>        
+        </div>
+        <div class="box" id="quad"></div>
+        <br><br>
+
+        <!--Exercício 3-->
+        <div class="lista">
+            <ul class="ulista">
+
+            </ul>
+        </div>
+        <br><br>
+
+        <!--Exercício 4-->
+        <div class="div2">
+            <input type="text" name="nome"/>
+            <button onclick="adicionar()">Adicinoar</button>
+        </div>
+
+
+        <script>
+        //Exercício 1
+            var btnElement = document.querySelector('button.btn');
+
+            btnElement.onclick = function(){
+                var boxElement=document.querySelector('.box');
+                boxElement.style.width = 100;
+                boxElement.style.height = 100;
+                boxElement.style.backgroundColor = 'red';
+            }
+
+        //Exercício 2
+            var boxElement = document.querySelector('.box');
+            
+            function getRandonColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            var newColor = getRandonColor(); //#E943f0
+
+            boxElement.onmouseover = function (){
+                var boxElement=document.querySelector('.box');             
+                boxElement.style.backgroundColor = newColor;
+            }
+        
+        //Exercício 3
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+
+            for (i=0;i < 3;i++){
+                var listElement = document.createElement('li');
+                var textol = nomes[i];
+                var texto = document.createTextNode (textol);
+                listElement.appendChild(texto);
+
+                var lista = document.getElementsByTagName('ul')[0];
+
+                var itens = document.getElementsByTagName('li');
+
+                lista.insertBefore(listElement, itens[0]);
+
+                //var containerElement = document.querySelector('#ulista');
+                //containerElement.appendChild(listElement);
+           }
+
+        //Exercício 4           
+            //var button = document.getElementsByTagName('button');
+
+            function adicionar() {
+                var listElement = document.createElement('li');
+                var textoElement = document.querySelector('input[name=nome');
+                var item = textoElement.value;
+                var texto = document.createTextNode (item);
+                listElement.appendChild(texto);
+                textoElement.value = "";
+                
+
+                var lista = document.getElementsByTagName('ul')[0];
+
+                //var itens = document.getElementsByTagName('li');
+
+                lista.appendChild(listElement);
+            }
+
+        </script>
+    </body>
+</html>

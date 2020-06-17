@@ -4,6 +4,8 @@
         <title>Curso RocktSeat JavaScript</title>
     </head>
     <body>
+        <span>--Aula "Eventos inline"--</span>
+        <br><br>
         <div id="app"> 
             <button onclick="mostraAlerta()">Me pressione</button>
         </div>
@@ -15,7 +17,27 @@
         <div id="app"> 
             <input onkeypress="mostraAlerta2()" />
         </div>
+        <br>
+
+        <span>--Aula "Trabalhando com a DOM"--</span>
+        <br><br>
+        <div id="app">  
+            <input type="text" name="nome" id="nome"/>
+            <button class="botao">Adicionar</button>
+        </div>
+        <br><br>
+        <span>--Aula "Lidando com elementos"--</span>
+        <br><br>
+        <div id="app2">
+            <input id="nome2" />
+        </div>
+        <br><br>
+        <span>--Aula "Alterando os estilos"--</span>
+        <br><br>
+        <div class="box"></div>
+
         <script>
+            //Aula Eventos inline
             function mostraAlerta(){
                 alert('Botão foi clicado');
             }
@@ -25,6 +47,49 @@
             function mostraAlerta2(){
                 alert('Tecla foi utilizada!');
             }
+
+            //Aula Trabalhando com a DOM
+            var inputElement = document.getElementById('nome');
+            var inputElement2 = document.getElementsByTagName('input');
+            var inputElement3 = document.getElementsByClassName('input');
+            var inputElement4 = document.querySelector('div#app input'); //queryselector apresentará somente um elemento
+            var inputElement5 = document.querySelector('input[name=nome]');
+            var btnElement = document.querySelector('button.botao');
+            
+            btnElement.onclick = function(){
+                var text = inputElement5.value;
+
+                alert(text);
+            }
+
+            console.log(inputElement);
+            console.log(inputElement2);
+            console.log(inputElement3);
+            console.log(inputElement4);
+            console.log(inputElement5);
+
+
+            //Aula Lidando com elementos
+            var linkElement = document.createElement('a');
+
+            linkElement.setAttribute('href','http://recketseat.com.br');
+            linkElement.setAttribute('title','Site da Rocketseat');
+
+            var textElement = document.createTextNode('Acessar site RocketSeat');
+            linkElement.appendChild(textElement);
+
+            var containerElement = document.querySelector('#app2');
+            containerElement.appendChild(linkElement);
+
+            var inputElement6 = document.querySelector('#nome2');
+            containerElement.removeChild(inputElement6);
+
+            //Aula Alterando os estilos
+            var boxElement = document.querySelector('.box');
+
+            boxElement.style.width = 100;
+            boxElement.style.height = 100;
+            boxElement.style.backgroundColor = 'red'
         </script>
     </body>
 </html>
