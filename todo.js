@@ -6,7 +6,7 @@ var todo = JSON.parse(localStorage.getItem('list_todo'))||['Fazer café', 'Estud
 
 function renderTodos(){
     listElement.innerHTML = '';
- 
+    
     for (todos of todo){
         var todoElement = document.createElement('li');
         var todoText = document.createTextNode(todos);
